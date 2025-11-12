@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+
+.idea-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    background: #fff;
+}
+
+.vote-buttons button {
+    margin-right: 0.5rem;
+}
