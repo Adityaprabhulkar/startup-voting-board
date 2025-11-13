@@ -1,14 +1,23 @@
 import React from "react";
 import VoteButtons from "./VoteButtons";
 
-export default function IdeaCard({ idea }) {
+const IdeaCard = ({ idea }) => {
     return (
-        <article className="idea-card">
+        <div className="idea-card">
+            <img src={idea.avatar}
+            alt= {idea.title}
+            style={{width: "200px", borderRadius: "50%"}}/>
+
             <h3>{idea.title}</h3>
             <p>{idea.description}</p>
-            <small>{idea.category}</small>
-            <VoteButtons ideaId={idea.id} />
-        </article>
+            <p>{idea.category}</p>
+
+            <VoteButtons ideaId={idea.id}/>
+        </div>
     );
-}
+};
+
+
+
+export default IdeaCard;
 

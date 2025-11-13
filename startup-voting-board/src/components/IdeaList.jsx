@@ -1,7 +1,8 @@
 import React from "react";
 import IdeaCard from "./IdeaCard";
 
-export default function IdeaList({ ideas}) {
+
+const IdeaList = ({ ideas}) => {
     return (
         <div className="idea-list">
             {ideas.map((idea) => (
@@ -10,3 +11,5 @@ export default function IdeaList({ ideas}) {
         </div>
     );
 }
+
+export default IdeaList;
