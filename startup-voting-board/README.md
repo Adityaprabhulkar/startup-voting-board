@@ -15,7 +15,7 @@
 -- I choose 'Vite' for faster development experience.   
 
 
-## Day 1 — Components & Static UI
+## Day 1 -- Components & Static UI
 
 - Created components: `IdeaCard`, `IdeaList`, `VoteButtons`, `HomePage`.
 - Integrated mock API from MockAPI.io.
