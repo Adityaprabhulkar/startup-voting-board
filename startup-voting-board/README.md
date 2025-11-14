@@ -28,3 +28,11 @@
 - Add Upvote and Downvote functionality using `sueState`.
 - Pass props from `IdeaCard` => `VoteButtons`.
 - Each idea card should have its own independent vote counter.
+
+## Day 3 --
+
+- Implemented Upvote / Downvote system with real-time UI updates
+- Created dummy startup ideas data
+- Centralized vote storage using Context API
+- Fully responsive layout using Tailwind CSS
+- Added custom pink neon glow effect on votes using:
