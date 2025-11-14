@@ -1,29 +1,20 @@
-import React, { useState } from "react";
+import React,{ useContext } from "react";
+import { VoteContext } from "../context/VoteContext";
 
 
-export default function VoteButtons({ ideaId }) {
-    const [votes, setVotes] = useState(0)
-
-    const handleUpvote = () => {
-        console.log(`Upvoted idea ${ideaId}`);
-        setVotes(votes + 1);
-    };
-
-    const handleDownvote = () => {
-        console.log(`Downvoted idea ${ideaId}`);
-        setVotes(votes - 1);
-    };
+const VoteButtons = ({ ideaId }) => {
+    const {votes, upvote, downvote}= useContext(VoteContext);
 
     return (
-        <div className="vote-buttons">
-            <button id="up-btn"
-            className="button"
-             onClick={handleUpvote}>👍Upvote</button>
-
-            <button id="down-btn"
-            className="button"
-             onClick={handleDownvote}>👎Downvote</button>
-            <span>Votes: {votes}</span>
+        <div className="flex flex-col gap-5 items-start" >
+            <p className="text-sm font-semibold">Votes: {votes[ideaId] ?? 0}</p>
+            <button className="bg-[#17a105] text-white px-6 py-2 rounded-2xl transition-all duration-300 hover:shadow-x2" onClick={() => upvote(ideaId)}>Upvote</button>
+            
+            <button  className="bg-[#c84e4e] text-white px-6 py-2 rounded-2xl transition-all duration-300 hover:shadow-x2" onClick={() => downvote(ideaId)}>Downvote</button>
         </div>
-    )
-}
+        
+    );
+};
+
+
+export default VoteButtons
