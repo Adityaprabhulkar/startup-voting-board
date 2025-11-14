@@ -14,10 +14,23 @@ const VoteButtons = ({ ideaId }) => {
             px-3 py-[2px] rounded-full
             shadow-[0_0_8px_rgba(236,72,153,0.6)]
             drop-shadow-[0_0_4px_rgba(236,72,153,0.5)]">Votes: {votes[ideaId] ?? 0}</p>
-            <button className="bg-[#17a105] text-white px-6 py-2 rounded-2xl transition-all duration-300 hover:shadow-x2" onClick={() => upvote(ideaId)}>Upvote</button>
+
+            <button
+             className="
+              bg-green-500 text-white font-semibold 
+                px-4 py-2 rounded-lg 
+                transition-transform duration-200 
+                hover:scale-105 cursor-pointer"
+                onClick={() => upvote(ideaId)}>Upvote</button>
             
-            <button  className="bg-[#c84e4e] text-white px-6 py-2 rounded-2xl transition-all duration-300 hover:shadow-x2" onClick={() => downvote(ideaId)}>Downvote</button>
-        </div>
+            <button 
+            className="
+                bg-red-500 text-white font-semibold 
+                px-4 py-2 rounded-lg 
+                transition-transform duration-200 
+                hover:scale-105 cursor-pointer"
+                onClick={() => downvote(ideaId)}>Downvote</button>
+                    </div>
         
     );
 };
