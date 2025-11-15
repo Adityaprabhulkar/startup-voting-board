@@ -3,6 +3,8 @@ import React, { createContext, useState, useEffect } from "react";
 export const VoteContext = createContext();
 
 export const VoteProvider = ({ children }) => {
+  
+  const storeVotes = JSON.parse(localStorage.getItem("votes")) || {};
   const [votes, setVotes] = useState({});
 
   useEffect(() => {
@@ -16,6 +18,10 @@ export const VoteProvider = ({ children }) => {
         setVotes(initialVotes);
       });
   }, []);
+
+  useEffect(() => {
+    localStoarge.setItem("votes", JSON.stringify(votes));
+  }, [votes]);
 
   const upvote = (id) => {
     setVotes((prev) => ({ ...prev, [id]: prev[id] + 1 }));
