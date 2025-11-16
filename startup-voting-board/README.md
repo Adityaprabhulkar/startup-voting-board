@@ -36,3 +36,5 @@
 - Centralized vote storage using Context API
 - Fully responsive layout using Tailwind CSS
 - Added custom pink neon glow effect on votes using:
+
+## Day 4
