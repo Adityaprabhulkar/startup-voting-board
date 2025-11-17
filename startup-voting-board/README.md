@@ -38,3 +38,13 @@
 - Added custom pink neon glow effect on votes using:
 
 ## Day 4
+
+- Loads initial vote counts from a MockAPI backend
+- Merges API votes with any existing localStorage votes
+- Saves updated votes again into localStorage
+
+## Day 5
+
+- Allows upvote and downvote actions from anywhere in the app
+    If the user has voted earlier → load previous votes
+    If first-time user → start with empty vo{}
