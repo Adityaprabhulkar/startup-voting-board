@@ -12,8 +12,6 @@ export const VoteProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         const apiVotes = {};
-
-
         data.forEach((idea) => {
           apiVotes[idea.id] = idea.votes || 0;
         });
