@@ -60,4 +60,5 @@
 - Impliment One-time vote restriction for each idea.
     - After Upvote or Downvote button get disabled.
     - Used alert() to show a message.
+        ("You can only vote once!")
 - Prevents users from multiple upvotes/downvotes on the same idea.
