@@ -6,28 +6,31 @@ const VoteButtons = ({ ideaId }) => {
   const userVote = userVotes[ideaId];
 
   return (
-    <div className="flex flex-col gap-3 items-start">
-      
-      {/* Votes Badge */}
-      <p
-        className="mt-1 text-xs font-semibold 
-        bg-pink-100 text-pink-600 border border-pink-300
-        px-3 py-[2px] rounded-full
-        shadow-[0_0_8px_rgba(236,72,153,0.6)]
-        drop-shadow-[0_0_4px_rgba(236,72,153,0.5)]"
-      >
-        Votes: {votes[ideaId] ?? 0}
-      </p>
+    <div className="flex flex-col items-start">
 
-      {/* UPVOTE BUTTON */}
+  
+     <p
+      className="
+        m-2 mt-1 text-xs font-semibold
+        bg-[#f3e8ff] dark:bg-[#3b2368]
+        text-[#4b0082] dark:text-purple-200
+        border border-[#c9a7ff] dark:border-[#5b3ea8]
+        px-3 py-[2px] rounded-full shadow
+      "
+    >
+      Votes: {votes[ideaId] ?? 0}
+    </p>
+
+ 
       <button
         disabled={userVote === "up"}
-        className={`px-3 py-1.5 rounded-xl font-medium text-white 
-          transition-all duration-300 shadow-md active:scale-95
+        className={`
+           px-3 py-1.5 rounded-xl font-semibold text-white 
+            transition-all duration-300 active:scale-95
           ${
             userVote === "up"
-              ? "bg-green-300 cursor-not-allowed shadow-none"
-              : "bg-gradient-to-r from-green-500 to-emerald-600 hover:scale-105 hover:shadow-lg"
+              ? "bg-green-400 dark:bg-green-900 cursor-not-allowed shadow-none"
+              : "bg-green-500 dark:bg-green-900 hover:scale-105 hover:shadow-lg"
           }
         `}
         onClick={() => upvote(ideaId)}
@@ -35,23 +38,24 @@ const VoteButtons = ({ ideaId }) => {
         {userVote === "up" ? "Upvoted" : "Upvote"}
       </button>
 
-      {/* DOWNVOTE BUTTON */}
+
       <button
-        disabled={userVote === "down"}
-        className={`px-3 py-1.5 rounded-xl font-medium text-white 
-          transition-all duration-300 shadow-md active:scale-95
-          ${
-            userVote === "down"
-              ? "bg-red-300 cursor-not-allowed shadow-none"
-              : "bg-gradient-to-r from-pink-500 to-red-600 hover:scale-105 hover:shadow-lg"
-          }
-        `}
-        onClick={() => downvote(ideaId)}
-      >
-        {userVote === "down" ? "Downvoted" : "Downvote"}
-      </button>
-    </div>
-  );
-};
+            disabled={userVote === "down"}
+            className={`
+              px-3 py-1.5 rounded-xl font-semibold text-white
+              transition-all duration-300 active:scale-95
+              ${
+                userVote === "down"
+                  ? "bg-gradient-to-r from-red-300 to-red-400 dark:from-red-800 dark:to-red-900 cursor-not-allowed shadow-none"
+                  : "bg-gradient-to-r from-red-500 to-red-700 dark:from-red-900 dark:to-red-700 hover:shadow-xl hover:scale-105"
+              }
+            `}
+      onClick={() => downvote(ideaId)}
+    >
+      {userVote === "down" ? "Downvoted" : "Downvote"}
+          </button>
+        </div>
+      );
+    };
 
 export default VoteButtons;

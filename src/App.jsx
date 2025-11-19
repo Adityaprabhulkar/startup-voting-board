@@ -1,77 +1,124 @@
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
 import HomePage from "./pages/HomePage";
-import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-white">
+    <div className=
+    "min-h-screen bg-gradient-to-l from-[#161d2d] to-[#899ab7]">
 
-      {/* Navbar */}
-      <nav className="flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 transition-colors duration-300">
-        
-        {/* Logo */}
-        <h1 className="text-xl font-bold flex items-center gap-2">
-          🚀 Startup Idea Voting Board
-        </h1>
+   
+       <nav className="
+       flex items-center
+       justify-between px-10 py-5
+        bg-gradient-to-r from-gray-900 to-gray-600
+         p-6 rounded-lg text-white">
+ 
+      <h1 className="text-3xl font-bold flex items-center gap-2">
+        🚀 Startups Idea Voting Boards
+      </h1>
+ 
+      <div className="flex items-center gap-10 text-lg font-semibold">
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden text-3xl"
-          onClick={() => setOpen(!open)}
-        >
-          ☰
+   
+        <button className="px-5 py-2 rounded-xl 
+          hover:bg-white
+           hover:text-black
+            hover:shadow-[0_0_5px_#8a2be2,0_0_30px_#8a2be2]
+            transition-all duration-300
+            cursor-pointer">
+          Home
         </button>
 
-        {/* Theme Toggle — inside navbar */}
-        <div className="hidden lg:block">
-          <ThemeToggle />
-        </div>
+  
+        <button className="px-5 py-2 rounded-xl 
+          hover:bg-white
+           hover:text-black
+            hover:shadow-[0_0_5px_#8a2be2,0_0_30px_#8a2be2]
+            transition-all duration-300
+            cursor-pointer">
+          About
+        </button>
 
-        {/* Menu */}
-        <ul
-          className={`
-            flex flex-col lg:flex-row lg:items-center lg:gap-6 
-            absolute lg:static right-6 top-16
-            bg-white dark:bg-gray-800
-            rounded-lg p-4 lg:p-0 transition-all duration-300
+        <button className="px-5 py-2 rounded-xl 
+          hover:bg-white
+           hover:text-black
+            hover:shadow-[0_0_5px_#8a2be2,0_0_30px_#8a2be2]
+            transition-all duration-300
+            cursor-pointer">
+          Contact
+        </button>
 
-            ${open ? "block" : "hidden"}   /* 🔥 important fix */
-            lg:block
-          `}
-        >
-          <li>
-            <a className="px-4 py-2 rounded-md hover:bg-purple-600 hover:scale-105 transition-all duration-300">
-              Home
-            </a>
-          </li>
+      </div>
 
-          <li>
-            <a className="px-4 py-2 rounded-md hover:bg-purple-600 hover:scale-105 transition-all duration-300">
-              About
-            </a>
-          </li>
+    </nav>
 
-          <li>
-            <a className="px-4 py-2 rounded-md hover:bg-purple-600 hover:scale-105 transition-all duration-300">
-              Contact
-            </a>
-          </li>
+  
+      <HomePage />
 
-          {/* Theme toggle for mobile */}
-          <div className="lg:hidden mt-3">
-            <ThemeToggle />
-          </div>
+  <footer className="bg-gradient-to-r from-gray-900 to-gray-600 text-white p-6">
+    <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
-        </ul>
-      </nav>
 
-      {/* Main page content */}
-      <main className="p-6 dark:text-white">
-        <HomePage />
-      </main>
+    <div>
+      <h2 className="text-xl font-bold mb-2">🚀 Startup Voting Board</h2>
+      <p className="text-gray-400 text-sm">
+        Vote and discover top startup ideas built by the community.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+      <ul className="space-y-2">
+        <li>
+          <a
+            href="#home"
+            className="text-gray-300 hover:text-purple-400 transition-all duration-300"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#about"
+            className="text-gray-300 hover:text-purple-400 transition-all duration-300"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            className="text-gray-300 hover:text-purple-400 transition-all duration-300"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+
+ 
+    <div>
+      <h3 className="text-lg font-semibold mb-3">Connect</h3>
+      <ul className="space-y-2">
+        <li className="text-gray-300 hover:text-purple-400 transition-all duration-300 cursor-pointer">
+          📧 support@startupboard.com
+        </li>
+        <li className="text-gray-300 hover:text-purple-400 transition-all duration-300 cursor-pointer">
+          📍 Mumbai, India
+        </li>
+        <li className="text-gray-300 hover:text-purple-400 transition-all duration-300 cursor-pointer">
+          💼 LinkedIn
+        </li>
+      </ul>
+    </div>
+  </div>
+
+ 
+  <div className="border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-500">
+    © {new Date().getFullYear()} Startup Idea Voting Board. All rights reserved.
+  </div>
+</footer>
+
     </div>
   );
 }

@@ -7,9 +7,13 @@ export const VoteProvider = ({ children }) => {
     return JSON.parse(localStorage.getItem("votes")) || {};
   });
 
-  const [userVotes, setUserVotes] = useState(() => {
+   const [userVotes, setUserVotes] = useState(() => {
     return JSON.parse(localStorage.getItem("userVotes")) || {}
   });
+
+  const [loading, setLoading] = useState(true);
+
+ 
 
   useEffect(() => {
     fetch("https://6915dcd1465a9144626de9fb.mockapi.io/idea")
@@ -21,8 +25,11 @@ export const VoteProvider = ({ children }) => {
         });
 
     setVotes((prev) => ({ ...apiVotes, ...prev }));
-      });
-    }, []);  
+
+    setLoading(false);
+      })
+      .catch(() => setLoading(false));
+    }, []);
 
   useEffect(() => {
     localStorage.setItem("votes", JSON.stringify(votes));
@@ -74,7 +81,7 @@ export const VoteProvider = ({ children }) => {
   };
 
   return (
-    <VoteContext.Provider value={{ votes, upvote, downvote, userVotes }}>
+    <VoteContext.Provider value={{ votes, upvote, downvote, userVotes, loading }}>
       {children}
     </VoteContext.Provider>
   );
