@@ -45,9 +45,11 @@
 
 ## Day 5 -- UI Polish + Reusable Components
 
-- Allows upvote and downvote actions from anywhere in the app.
-    If the user has voted earlier → load previous votes.
-    If first-time user → start with empty votes {}.
+- Moved votes from dummy data to real MockAPI backend.
+-  Synced votes from API on every refresh.
+- Ensured localStorage + API votings merge properly.
+- Added error handling and improved loading state.
+- Updated UI to reflect live server votes.
 
 ## Day 6 -- Build Optimization + Error Fixes
 
