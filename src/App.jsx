@@ -9,11 +9,15 @@ export default function App() {
    
        <nav className="w-full bg-gradient-to-r from-[#0c0f17] to-[#4c5669] text-white px-6 py-4 shadow-md">
  
-      <h1 className="text-3xl font-bold flex items-center ">
-        🚀 Startups Idea Voting Boards
+      <h1 className="
+          text-4xl font-bold text-white drop-shadow-[3px_3px_0px_black]
+          animate-slideInLeft
+        ">
+        🚀 Startup Idea Voting Board
       </h1>
+
  
-      <div className="flex items-evenly space-x-2 text-lg justify-end">
+      <div className="flex items-evenly space-x-1 text-lg justify-end animate-slideInRight">
 
       
         <button className="px-5 py-2 rounded-xl 
