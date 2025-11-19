@@ -4,24 +4,20 @@ import HomePage from "./pages/HomePage";
 export default function App() {
   return (
     <div className=
-    "min-h-screen bg-gradient-to-l from-[#161d2d] to-[#899ab7]">
+    "min-h-screen bg-gradient-to-l from-[#161d2d] to-[#899ab7] ">
 
    
-       <nav className="
-       flex items-center
-       justify-between px-10 py-5
-        bg-gradient-to-r from-gray-900 to-gray-600
-         p-6 rounded-lg text-white">
+       <nav className="w-full bg-gradient-to-r from-[#0c0f17] to-[#4c5669] text-white px-6 py-4 shadow-md">
  
-      <h1 className="text-3xl font-bold flex items-center gap-2">
+      <h1 className="text-3xl font-bold flex items-center ">
         🚀 Startups Idea Voting Boards
       </h1>
  
-      <div className="flex items-center gap-10 text-lg font-semibold">
+      <div className="flex items-evenly space-x-2 text-lg justify-end">
 
-   
+      
         <button className="px-5 py-2 rounded-xl 
-          hover:bg-white
+          hover:bg-gray-300
            hover:text-black
             hover:shadow-[0_0_5px_#8a2be2,0_0_30px_#8a2be2]
             transition-all duration-300
@@ -31,7 +27,7 @@ export default function App() {
 
   
         <button className="px-5 py-2 rounded-xl 
-          hover:bg-white
+          hover:bg-gray-300
            hover:text-black
             hover:shadow-[0_0_5px_#8a2be2,0_0_30px_#8a2be2]
             transition-all duration-300
@@ -40,7 +36,7 @@ export default function App() {
         </button>
 
         <button className="px-5 py-2 rounded-xl 
-          hover:bg-white
+          hover:bg-gray-300
            hover:text-black
             hover:shadow-[0_0_5px_#8a2be2,0_0_30px_#8a2be2]
             transition-all duration-300
@@ -55,7 +51,7 @@ export default function App() {
   
       <HomePage />
 
-  <footer className="bg-gradient-to-r from-gray-900 to-gray-600 text-white p-6">
+  <footer className="bg-gradient-to-r from-gray-900 to-gray-500 text-white p-6">
     <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
 

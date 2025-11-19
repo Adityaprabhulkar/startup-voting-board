@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { VoteContext } from "../context/VoteContext";
+import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/solid";
+
 
 const VoteButtons = ({ ideaId }) => {
   const { votes, upvote, downvote, userVotes } = useContext(VoteContext);
@@ -12,25 +14,26 @@ const VoteButtons = ({ ideaId }) => {
      <p
       className="
         m-2 mt-1 text-xs font-semibold
-        bg-[#f3e8ff] dark:bg-[#3b2368]
+        bg-[#f5f5f5] dark:bg-[#3b2368]
         text-[#4b0082] dark:text-purple-200
-        border border-[#c9a7ff] dark:border-[#5b3ea8]
-        px-3 py-[2px] rounded-full shadow
+        border border-[#9c87bc] dark:border-[#000000]
+        px-3 py-[3px] rounded-full shadow
       "
     >
       Votes: {votes[ideaId] ?? 0}
     </p>
 
- 
+      
       <button
         disabled={userVote === "up"}
         className={`
-           px-3 py-1.5 rounded-xl font-semibold text-white 
-            transition-all duration-300 active:scale-95
+          flex items-center gap-2
+          px-3 py-1.5 rounded-xl font-semibold text-white 
+          transition-all duration-300 active:scale-95
           ${
             userVote === "up"
-              ? "bg-green-400 dark:bg-green-900 cursor-not-allowed shadow-none"
-              : "bg-green-500 dark:bg-green-900 hover:scale-105 hover:shadow-lg"
+              ? "bg-[#4caf50] opacity-60 cursor-not-allowed"
+              : "bg-[#4caf50] hover:scale-105 hover:shadow-lg"
           }
         `}
         onClick={() => upvote(ideaId)}
@@ -42,6 +45,8 @@ const VoteButtons = ({ ideaId }) => {
       <button
             disabled={userVote === "down"}
             className={`
+              flex items-center gap-2
+              mt-2
               px-3 py-1.5 rounded-xl font-semibold text-white
               transition-all duration-300 active:scale-95
               ${
